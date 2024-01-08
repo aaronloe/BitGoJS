@@ -1,15 +1,13 @@
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 import * as assert from 'assert';
-import { TxOutput } from 'bitcoinjs-lib';
+import type { TxOutput } from 'bitcoinjs-lib';
 
-import { networks, Network } from '../src';
+import type { Network } from '../src';
+import { networks } from '../src';
 
-import {
-  createOutputScript2of3,
-  createOutputScriptP2shP2pk,
-  isScriptType2Of3,
-  ScriptType2Of3,
-} from '../src/bitgo/outputScripts';
+import type { ScriptType2Of3 } from '../src/bitgo/outputScripts';
+import { createOutputScript2of3, createOutputScriptP2shP2pk, isScriptType2Of3 } from '../src/bitgo/outputScripts';
+import type { TxOutPoint, UtxoTransaction, UtxoTransactionBuilder, PrevOutput } from '../src/bitgo';
 import {
   isTriple,
   createPsbtFromBuffer,
@@ -19,14 +17,10 @@ import {
   createTransactionFromBuffer,
   signInput2Of3,
   signInputP2shP2pk,
-  TxOutPoint,
-  UtxoTransaction,
-  UtxoTransactionBuilder,
-  PrevOutput,
   toTNumber,
   UtxoPsbt,
 } from '../src/bitgo';
-import { KeyTriple } from '../src/testutil';
+import type { KeyTriple } from '../src/testutil';
 
 import { createScriptPubKey } from './integration_local_rpc/generate/outputScripts.util';
 import { fixtureKeys } from './integration_local_rpc/generate/fixtures';

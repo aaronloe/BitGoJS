@@ -1,23 +1,38 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    
+
+    /* Linting */
+    "skipLibCheck": true,
+    
+    "noFallthroughCasesInSwitch": true,
+    
+
     "composite": true,
     "declaration": true,
     "declarationMap": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "lib": ["dom", "es2019"],
-    "module": "commonjs",
-    "noFallthroughCasesInSwitch": true,
+        
+    
     "noImplicitThis": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "target": "es2019",
+    "allowSyntheticDefaultImports": true,
     "typeRoots": ["./node_modules/@types", "./types"]
-  },
-  "exclude": ["node_modules"]
+  }
 }

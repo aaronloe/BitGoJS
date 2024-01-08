@@ -1,41 +1,35 @@
 import * as assert from 'assert';
 import { describe, it } from 'mocha';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 
-import { isTestnet, TxOutput, getNetworkList, getNetworkName, networks } from '../../src';
+import type { TxOutput } from '../../src';
+import { isTestnet, getNetworkList, getNetworkName, networks } from '../../src';
 import { getDefaultCosigner } from '../../src/testutil';
 
+import type { ParsedSignatureScriptP2ms, Triple, TxOutPoint, UtxoTransaction } from '../../src/bitgo';
 import {
   createTransactionBuilderForNetwork,
   createTransactionBuilderFromTransaction,
   createTransactionFromBuffer,
   getDefaultTransactionVersion,
   getOutputIdForInput,
-  ParsedSignatureScriptP2ms,
   parseSignatureScript,
   parseSignatureScript2Of3,
   signInput2Of3,
-  Triple,
-  TxOutPoint,
-  UtxoTransaction,
   verifySignature,
 } from '../../src/bitgo';
-import { isScriptType2Of3, ScriptType2Of3 } from '../../src/bitgo/outputScripts';
+import type { ScriptType2Of3 } from '../../src/bitgo/outputScripts';
+import { isScriptType2Of3 } from '../../src/bitgo/outputScripts';
 
+import type { ScriptType } from './generate/outputScripts.util';
 import {
   createSpendTransactionFromPrevOutputs,
   isSupportedDepositType,
   isSupportedSpendType,
-  ScriptType,
   scriptTypes,
 } from './generate/outputScripts.util';
-import {
-  fixtureKeys,
-  getProtocolVersions,
-  Protocol,
-  readFixture,
-  TransactionFixtureWithInputs,
-} from './generate/fixtures';
+import type { Protocol, TransactionFixtureWithInputs } from './generate/fixtures';
+import { fixtureKeys, getProtocolVersions, readFixture } from './generate/fixtures';
 import { parseTransactionRoundTrip } from '../transaction_util';
 import { normalizeParsedTransaction, normalizeRpcTransaction } from './compare';
 import { decimalCoinsToSats } from '../testutil';

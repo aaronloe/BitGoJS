@@ -1,9 +1,9 @@
 import * as assert from 'assert';
 import { describe, it } from 'mocha';
 import { ecc } from '../src';
-import { PaymentCreator } from 'bitcoinjs-lib';
+import type { PaymentCreator } from 'bitcoinjs-lib';
 import * as u from './payments.utils';
-import { TinySecp256k1Interface } from '../src/taproot';
+import type { TinySecp256k1Interface } from '../src/taproot';
 
 ['p2tr', 'p2tr_ns'].forEach((p) => {
   describe(p, () => {

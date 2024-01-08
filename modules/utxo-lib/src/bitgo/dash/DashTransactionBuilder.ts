@@ -1,8 +1,8 @@
-import * as bitcoinjs from 'bitcoinjs-lib';
-import { Network } from '../../networks';
+import type * as bitcoinjs from 'bitcoinjs-lib';
+import type { Network } from '../../networks';
 import { UtxoTransactionBuilder } from '../UtxoTransactionBuilder';
 import { DashTransaction } from './DashTransaction';
-import { UtxoTransaction } from '../UtxoTransaction';
+import type { UtxoTransaction } from '../UtxoTransaction';
 
 export class DashTransactionBuilder<TNumber extends number | bigint = number> extends UtxoTransactionBuilder<
   TNumber,

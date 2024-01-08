@@ -1,4 +1,4 @@
-import { TapLeafScript } from 'bip174/src/lib/interfaces';
+import type { TapLeafScript } from 'bip174/src/lib/interfaces';
 export { TapLeafScript };
 
 export type Tuple<T> = [T, T];

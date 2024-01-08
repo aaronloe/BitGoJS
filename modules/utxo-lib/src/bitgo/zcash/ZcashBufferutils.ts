@@ -5,10 +5,11 @@
  * References:
  * - https://github.com/zcash/zcash/blob/v4.5.1/src/primitives/transaction.h#L771
  */
-import { TxInput, TxOutput } from 'bitcoinjs-lib';
-import { BufferReader, BufferWriter } from 'bitcoinjs-lib/src/bufferutils';
+import type { TxInput, TxOutput } from 'bitcoinjs-lib';
+import type { BufferReader, BufferWriter } from 'bitcoinjs-lib/src/bufferutils';
 
-import { UnsupportedTransactionError, ZcashTransaction } from './ZcashTransaction';
+import type { ZcashTransaction } from './ZcashTransaction';
+import { UnsupportedTransactionError } from './ZcashTransaction';
 
 export const VALUE_INT64_ZERO = Buffer.from('0000000000000000', 'hex');
 

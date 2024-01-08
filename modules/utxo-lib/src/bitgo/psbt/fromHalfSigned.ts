@@ -1,7 +1,8 @@
 import * as assert from 'assert';
-import { PsbtInputUpdate, PartialSig } from 'bip174/src/lib/interfaces';
-import { ecc as eccLib, TxOutput, taproot, getMainnet, networks } from '../..';
-import { UtxoTransaction } from '../UtxoTransaction';
+import type { PsbtInputUpdate, PartialSig } from 'bip174/src/lib/interfaces';
+import type { TxOutput } from '../..';
+import { ecc as eccLib, taproot, getMainnet, networks } from '../..';
+import type { UtxoTransaction } from '../UtxoTransaction';
 import { parseSignatureScript } from '../parseInput';
 import { getSignaturesWithPublicKeys } from '../signature';
 import { hasWitnessData } from '../outputScripts';

@@ -1,4 +1,4 @@
-import { UtxoPsbt } from './UtxoPsbt';
+import type { UtxoPsbt } from './UtxoPsbt';
 import { createTransactionFromBuffer } from './transaction';
 
 export function getTransactionAmountsFromPsbt(psbt: UtxoPsbt): {

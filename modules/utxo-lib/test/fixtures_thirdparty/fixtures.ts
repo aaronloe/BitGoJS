@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra';
-import { Network, networks, getMainnet, getNetworkName } from '../../src/networks';
+import type { Network } from '../../src/networks';
+import { networks, getMainnet, getNetworkName } from '../../src/networks';
 
 export type FixtureInfo = {
   projectPath: string;

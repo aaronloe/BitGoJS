@@ -1,8 +1,8 @@
-import { TxOutput } from 'bitcoinjs-lib';
-import { Network } from '..';
+import type { TxOutput } from 'bitcoinjs-lib';
+import type { Network } from '..';
 import { fromOutputScript, toOutputScript } from '../address';
-import { UtxoTransactionBuilder } from './UtxoTransactionBuilder';
-import { UtxoTransaction } from './UtxoTransaction';
+import type { UtxoTransactionBuilder } from './UtxoTransactionBuilder';
+import type { UtxoTransaction } from './UtxoTransaction';
 
 /**
  * Public unspent data in BitGo-specific representation.

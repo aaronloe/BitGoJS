@@ -1,8 +1,9 @@
 import { taproot } from 'bitcoinjs-lib';
-import { PsbtOutputUpdate } from 'bip174/src/lib/interfaces';
-import { UtxoPsbt } from '../UtxoPsbt';
-import { RootWalletKeys } from './WalletKeys';
-import { ChainCode, scriptTypeForChain } from './chains';
+import type { PsbtOutputUpdate } from 'bip174/src/lib/interfaces';
+import type { UtxoPsbt } from '../UtxoPsbt';
+import type { RootWalletKeys } from './WalletKeys';
+import type { ChainCode } from './chains';
+import { scriptTypeForChain } from './chains';
 import { createOutputScript2of3, createPaymentP2tr, createPaymentP2trMusig2, toXOnlyPublicKey } from '../outputScripts';
 
 /**

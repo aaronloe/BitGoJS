@@ -2,9 +2,11 @@ import * as path from 'path';
 import * as fs from 'fs-extra';
 import * as assert from 'assert';
 
-import { networks, Network, getNetworkName } from '../../src';
+import type { Network } from '../../src';
+import { networks, getNetworkName } from '../../src';
 import { createTransactionFromBuffer } from '../../src/bitgo';
-import { ScriptType2Of3, scriptTypes2Of3 } from '../../src/bitgo/outputScripts';
+import type { ScriptType2Of3 } from '../../src/bitgo/outputScripts';
+import { scriptTypes2Of3 } from '../../src/bitgo/outputScripts';
 import { getDefaultCosigner } from '../../src/testutil';
 
 import { getHalfSignedTransaction2Of3 } from '../transaction_util';

@@ -1,12 +1,11 @@
 import * as assert from 'assert';
 
-import { Network, getNetworkName, networks, getNetworkList, testutil, isMainnet, Transaction } from '../../../src';
+import type { Network } from '../../../src';
+import { getNetworkName, networks, getNetworkList, testutil, isMainnet, Transaction } from '../../../src';
+import type { KeyName, UtxoPsbt, ZcashPsbt, UtxoTransaction, Unspent, WalletUnspent } from '../../../src/bitgo';
 import {
   getExternalChainCode,
   outputScripts,
-  KeyName,
-  UtxoPsbt,
-  ZcashPsbt,
   createPsbtFromHex,
   parsePsbtInput,
   toWalletPsbt,
@@ -14,7 +13,6 @@ import {
   addReplayProtectionUnspentToPsbt,
   addWalletOutputToPsbt,
   getInternalChainCode,
-  UtxoTransaction,
   isTransactionWithKeyPathSpendInput,
   isPsbt,
   psbtIncludesUnspentAtIndex,
@@ -22,7 +20,6 @@ import {
   createPsbtFromTransaction,
   toPrevOutput,
   updateReplayProtectionUnspentToPsbt,
-  Unspent,
   isWalletUnspent,
   updateWalletOutputForPsbt,
   extractP2msOnlyHalfSignedTx,
@@ -34,24 +31,21 @@ import {
   getPsbtInputScriptType,
   withUnsafeNonSegwit,
   getTransactionAmountsFromPsbt,
-  WalletUnspent,
   getDefaultSigHash,
 } from '../../../src/bitgo';
+import type { ScriptType2Of3, ScriptTypeP2shP2pk } from '../../../src/bitgo/outputScripts';
 import {
   createOutputScript2of3,
   createOutputScriptP2shP2pk,
   isSupportedScriptType,
-  ScriptType2Of3,
-  ScriptTypeP2shP2pk,
   scriptTypes2Of3,
 } from '../../../src/bitgo/outputScripts';
 
+import type { Input, Output } from '../../../src/testutil';
 import {
   getDefaultWalletKeys,
-  Input,
   inputScriptTypes,
   mockReplayProtectionUnspent,
-  Output,
   outputScriptTypes,
   replayProtectionKeyPair,
   signAllTxnInputs,

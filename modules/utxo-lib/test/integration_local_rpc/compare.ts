@@ -1,9 +1,10 @@
 import * as address from '../../src/address';
-import { Network, getMainnet, networks, isZcash } from '../../src/networks';
-import { DashTransaction, UtxoTransaction, ZcashTransaction } from '../../src/bitgo';
+import type { Network } from '../../src/networks';
+import { getMainnet, networks, isZcash } from '../../src/networks';
+import type { DashTransaction, UtxoTransaction, ZcashTransaction } from '../../src/bitgo';
 import { decimalCoinsToSats } from '../testutil';
 
-import { RpcTransaction } from './generate/RpcTypes';
+import type { RpcTransaction } from './generate/RpcTypes';
 
 type NormalizedObject = Record<string, unknown>;
 

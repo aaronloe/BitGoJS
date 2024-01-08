@@ -1,5 +1,6 @@
 import * as assert from 'assert';
 
+import type { UtxoTransaction } from '../../../src/bitgo';
 import {
   createPsbtFromHex,
   getExternalChainCode,
@@ -10,7 +11,6 @@ import {
   PSBT_PROPRIETARY_IDENTIFIER,
   RootWalletKeys,
   scriptTypeForChain,
-  UtxoTransaction,
   verifySignatureWithUnspent,
 } from '../../../src/bitgo';
 

@@ -4,7 +4,8 @@
  * Use `toOutputScriptTryFormats()` instead of `toOutputScript()` to parse addresses in
  * non-canonical formats
  */
-import { getMainnet, getNetworkName, Network, networks } from './networks';
+import type { Network } from './networks';
+import { getMainnet, getNetworkName, networks } from './networks';
 import { fromOutputScript, toOutputScript } from './address';
 
 import { bcashAddress } from './bitgo';

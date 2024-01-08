@@ -1,12 +1,12 @@
-import * as bitcoinjs from 'bitcoinjs-lib';
+import type * as bitcoinjs from 'bitcoinjs-lib';
 import * as types from 'bitcoinjs-lib/src/types';
 const typeforce = require('typeforce');
 
-import { Network } from '../..';
+import type { Network } from '../..';
+import type { ZcashNetwork } from './ZcashTransaction';
 import {
   getDefaultConsensusBranchIdForVersion,
   getDefaultVersionGroupIdForVersion,
-  ZcashNetwork,
   ZcashTransaction,
 } from './ZcashTransaction';
 import { UtxoTransactionBuilder } from '../UtxoTransactionBuilder';

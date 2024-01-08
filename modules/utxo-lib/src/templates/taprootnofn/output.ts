@@ -1,6 +1,6 @@
 // [pubKeys[0:n-1] OP_CHECKSIGVERIFY] pubKeys[n-1] OP_CHECKSIG
 
-import { Stack } from '../../';
+import type { Stack } from '../../';
 import { script as bscript } from '../../';
 import { opcodes } from '../../';
 import { ecc } from '../../noble_ecc';

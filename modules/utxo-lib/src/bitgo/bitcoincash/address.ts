@@ -13,8 +13,9 @@
  */
 import * as cashaddress from 'cashaddress';
 import * as bitcoinjs from 'bitcoinjs-lib';
-import { getNetworkName, isBitcoinCash, isECash, Network, networks } from '../../networks';
-import { AddressFormat } from '../../addressFormat';
+import type { Network } from '../../networks';
+import { getNetworkName, isBitcoinCash, isECash, networks } from '../../networks';
+import type { AddressFormat } from '../../addressFormat';
 
 /**
  * @param name

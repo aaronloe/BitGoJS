@@ -1,8 +1,10 @@
 import * as assert from 'assert';
 import { describe, it } from 'mocha';
 
-import { BIP32Interface, getNetworkName, Network, networks } from '../../../src';
-import { outputScripts, PrevOutput, UtxoPsbt, UtxoTransaction } from '../../../src/bitgo';
+import type { BIP32Interface, Network } from '../../../src';
+import { getNetworkName, networks } from '../../../src';
+import type { PrevOutput, UtxoTransaction } from '../../../src/bitgo';
+import { outputScripts, UtxoPsbt } from '../../../src/bitgo';
 import { getDefaultWalletKeys, getKeyName } from '../../../src/testutil';
 import { getLeafHash } from '../../../src/bitgo/outputScripts';
 import { getInputUpdate } from '../../../src/bitgo/psbt/fromHalfSigned';

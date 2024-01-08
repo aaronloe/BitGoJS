@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs-extra';
 
 import { networks } from '../../../src';
+import type { NonWitnessWalletUnspent } from '../../../src/bitgo';
 import {
   addWalletUnspentToPsbt,
   createPsbtForNetwork,
@@ -11,7 +12,6 @@ import {
   createTransactionFromBuffer,
   LitecoinPsbt,
   LitecoinTransaction,
-  NonWitnessWalletUnspent,
 } from '../../../src/bitgo';
 import { getDefaultWalletKeys, mockWalletUnspent } from '../../../src/testutil';
 

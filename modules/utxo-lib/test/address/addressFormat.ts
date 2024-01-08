@@ -2,10 +2,11 @@
  * Contains third-party test fixtures for nonstandard address formats
  */
 import * as assert from 'assert';
-import { getMainnet, getNetworkList, getNetworkName, Network, networks } from '../../src';
+import type { Network } from '../../src';
+import { getMainnet, getNetworkList, getNetworkName, networks } from '../../src';
 import { fromOutputScript } from '../../src/address';
+import type { AddressFormat } from '../../src/addressFormat';
 import {
-  AddressFormat,
   fromOutputScriptWithFormat,
   toCanonicalFormat,
   toOutputScriptAndFormat,

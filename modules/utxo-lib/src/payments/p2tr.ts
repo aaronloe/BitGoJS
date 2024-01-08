@@ -2,7 +2,8 @@
 // https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
 
 import { networks } from '../networks';
-import { script as bscript, Payment, PaymentOpts, lazy } from 'bitcoinjs-lib';
+import type { Payment, PaymentOpts } from 'bitcoinjs-lib';
+import { script as bscript, lazy } from 'bitcoinjs-lib';
 import * as taproot from '../taproot';
 import { musig } from '../noble_ecc';
 import * as necc from '@noble/secp256k1';

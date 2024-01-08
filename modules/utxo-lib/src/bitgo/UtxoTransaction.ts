@@ -3,7 +3,8 @@ import * as bitcoinjs from 'bitcoinjs-lib';
 import * as varuint from 'varuint-bitcoin';
 import { toTNumber } from './tnumber';
 
-import { networks, Network, getMainnet, isBitcoinGold } from '../networks';
+import type { Network } from '../networks';
+import { networks, getMainnet, isBitcoinGold } from '../networks';
 
 export function varSliceSize(slice: Buffer): number {
   const length = slice.length;

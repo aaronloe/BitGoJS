@@ -4,13 +4,14 @@ import * as bufferutils from 'bitcoinjs-lib/src/bufferutils';
 import * as classify from './classify';
 import { crypto as bcrypto } from './';
 import { networks } from './';
-import { Network } from './';
+import type { Network } from './';
 import { payments } from './';
-import { Payment } from './';
+import type { Payment } from './';
 import { script as bscript } from './';
 import { opcodes as ops } from './';
 import { taproot } from './';
-import { TxOutput, Transaction } from './';
+import type { TxOutput } from './';
+import { Transaction } from './';
 import { ECPair, ecc as eccLib } from './noble_ecc';
 
 export interface Signer {

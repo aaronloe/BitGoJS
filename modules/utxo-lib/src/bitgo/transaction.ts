@@ -1,9 +1,11 @@
 /* eslint no-redeclare: 0 */
-import { TxOutput } from 'bitcoinjs-lib';
+import type { TxOutput } from 'bitcoinjs-lib';
 
-import { networks, Network, getMainnet } from '../networks';
+import type { Network } from '../networks';
+import { networks, getMainnet } from '../networks';
 
-import { UtxoPsbt, PsbtOpts } from './UtxoPsbt';
+import type { PsbtOpts } from './UtxoPsbt';
+import { UtxoPsbt } from './UtxoPsbt';
 import { UtxoTransaction } from './UtxoTransaction';
 import { UtxoTransactionBuilder } from './UtxoTransactionBuilder';
 import { DashPsbt } from './dash/DashPsbt';
@@ -11,7 +13,8 @@ import { DashTransaction } from './dash/DashTransaction';
 import { DashTransactionBuilder } from './dash/DashTransactionBuilder';
 import { ZcashPsbt } from './zcash/ZcashPsbt';
 import { ZcashTransactionBuilder } from './zcash/ZcashTransactionBuilder';
-import { ZcashNetwork, ZcashTransaction } from './zcash/ZcashTransaction';
+import type { ZcashNetwork } from './zcash/ZcashTransaction';
+import { ZcashTransaction } from './zcash/ZcashTransaction';
 import { LitecoinPsbt, LitecoinTransaction, LitecoinTransactionBuilder } from './litecoin';
 
 export function createTransactionFromBuffer(

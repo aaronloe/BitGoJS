@@ -2,10 +2,11 @@
 // https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
 // https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
 
-import { TapTree as PsbtTapTree, TapLeaf as PsbtTapLeaf } from 'bip174/src/lib/interfaces';
-import assert = require('assert');
-import FastPriorityQueue = require('fastpriorityqueue');
-import { script as bscript, crypto as bcrypto, payments as bpayments } from 'bitcoinjs-lib';
+import type { TapTree as PsbtTapTree, TapLeaf as PsbtTapLeaf } from 'bip174/src/lib/interfaces';
+import assert from 'assert';
+import FastPriorityQueue from 'fastpriorityqueue';
+import type { payments as bpayments } from 'bitcoinjs-lib';
+import { script as bscript, crypto as bcrypto } from 'bitcoinjs-lib';
 import { ecc as eccLib } from './noble_ecc';
 const varuint = require('varuint-bitcoin');
 

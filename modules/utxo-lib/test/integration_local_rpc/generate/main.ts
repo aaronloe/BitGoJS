@@ -2,29 +2,28 @@ import * as assert from 'assert';
 
 const utxolib = require('../../../src');
 
-import { Network, getMainnet, getNetworkName, isTestnet } from '../../../src';
+import type { Network } from '../../../src';
+import { getMainnet, getNetworkName, isTestnet } from '../../../src';
 
-import { getRegtestNode, getRegtestNodeUrl, Node, getRegtestNodeHelp } from './regtestNode';
+import type { Node } from './regtestNode';
+import { getRegtestNode, getRegtestNodeUrl, getRegtestNodeHelp } from './regtestNode';
+import type { ScriptType } from './outputScripts.util';
 import {
   createScriptPubKey,
   createSpendTransaction,
   createPsbtSpendTransaction,
   isSupportedDepositType,
-  ScriptType,
   scriptTypes,
   getP2trMusig2Index,
 } from './outputScripts.util';
 import { RpcClient } from './RpcClient';
-import {
-  fixtureKeys,
-  getProtocolVersions,
-  Protocol,
-  wipeFixtures,
-  writeTransactionFixtureWithInputs,
-} from './fixtures';
-import { isScriptType2Of3, isSupportedScriptType, ScriptType2Of3 } from '../../../src/bitgo/outputScripts';
+import type { Protocol } from './fixtures';
+import { fixtureKeys, getProtocolVersions, wipeFixtures, writeTransactionFixtureWithInputs } from './fixtures';
+import type { ScriptType2Of3 } from '../../../src/bitgo/outputScripts';
+import { isScriptType2Of3, isSupportedScriptType } from '../../../src/bitgo/outputScripts';
 import { sendFromFaucet, generateToFaucet } from './faucet';
-import { getInternalChainCode, KeyName, RootWalletKeys, Tuple, ZcashTransaction } from '../../../src/bitgo';
+import type { KeyName, Tuple } from '../../../src/bitgo';
+import { getInternalChainCode, RootWalletKeys, ZcashTransaction } from '../../../src/bitgo';
 
 function getScriptTypes() {
   // FIXME(BG-66941): p2trMusig2 signing does not work in this test suite yet

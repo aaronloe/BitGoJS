@@ -1,8 +1,9 @@
 import * as assert from 'assert';
 import { payments } from 'bitcoinjs-lib';
 import * as types from 'bitcoinjs-lib/src/types';
-import { Base58CheckResult } from 'bitcoinjs-lib/src/address';
-import { isZcash, Network } from '../../networks';
+import type { Base58CheckResult } from 'bitcoinjs-lib/src/address';
+import type { Network } from '../../networks';
+import { isZcash } from '../../networks';
 const bs58check = require('bs58check');
 const typeforce = require('typeforce');
 

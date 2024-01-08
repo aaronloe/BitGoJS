@@ -1,8 +1,9 @@
 import * as bitcoinjs from 'bitcoinjs-lib';
-import { Base58CheckResult, Bech32Result } from 'bitcoinjs-lib/src/address';
+import type { Base58CheckResult, Bech32Result } from 'bitcoinjs-lib/src/address';
 
 import * as zcashAddress from '../src/bitgo/zcash/address';
-import { isValidNetwork, isZcash, Network } from './networks';
+import type { Network } from './networks';
+import { isValidNetwork, isZcash } from './networks';
 import { p2trPayments } from './index';
 
 export function fromOutputScript(outputScript: Buffer, network: Network): string {

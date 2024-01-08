@@ -3,6 +3,7 @@ import { describe, it } from 'mocha';
 import * as bs58check from 'bs58check';
 
 import { getDefaultWalletKeys, mockReplayProtectionUnspent, mockUnspents } from '../../../src/testutil';
+import type { KeyName, UtxoPsbt, WalletUnspent } from '../../../src/bitgo';
 import {
   addReplayProtectionUnspentToPsbt,
   addWalletOutputToPsbt,
@@ -11,12 +12,10 @@ import {
   MAX_BIP125_RBF_SEQUENCE,
   TX_INPUT_SEQUENCE_NUMBER_FINAL,
   getInternalChainCode,
-  KeyName,
   outputScripts,
-  UtxoPsbt,
-  WalletUnspent,
 } from '../../../src/bitgo';
-import { getNetworkName, Network, networks } from '../../../src';
+import type { Network } from '../../../src';
+import { getNetworkName, networks } from '../../../src';
 import { createOutputScriptP2shP2pk } from '../../../src/bitgo/outputScripts';
 
 function getScriptTypes(): outputScripts.ScriptType[] {

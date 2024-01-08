@@ -1,5 +1,6 @@
-import { getMainnet, Network, networks } from '../..';
-import { UtxoTransactionBuilder } from '../UtxoTransactionBuilder';
+import type { Network } from '../..';
+import { getMainnet, networks } from '../..';
+import type { UtxoTransactionBuilder } from '../UtxoTransactionBuilder';
 import {
   createKeyPathP2trMusig2,
   createOutputScript2of3,
@@ -15,21 +16,15 @@ import {
   signInput2Of3,
   verifySignatureWithPublicKeys,
 } from '../signature';
-import { WalletUnspentSigner } from './WalletUnspentSigner';
-import { KeyName, RootWalletKeys } from './WalletKeys';
-import { UtxoTransaction } from '../UtxoTransaction';
-import { Triple } from '../types';
-import {
-  toOutput,
-  UnspentWithPrevTx,
-  Unspent,
-  isUnspentWithPrevTx,
-  toPrevOutput,
-  parseOutputId,
-  getOutputIdForInput,
-} from '../Unspent';
-import { ChainCode, isSegwit } from './chains';
-import { UtxoPsbt } from '../UtxoPsbt';
+import type { WalletUnspentSigner } from './WalletUnspentSigner';
+import type { KeyName, RootWalletKeys } from './WalletKeys';
+import type { UtxoTransaction } from '../UtxoTransaction';
+import type { Triple } from '../types';
+import type { UnspentWithPrevTx, Unspent } from '../Unspent';
+import { toOutput, isUnspentWithPrevTx, toPrevOutput, parseOutputId, getOutputIdForInput } from '../Unspent';
+import type { ChainCode } from './chains';
+import { isSegwit } from './chains';
+import type { UtxoPsbt } from '../UtxoPsbt';
 import { encodePsbtMusig2Participants } from '../Musig2';
 import { createTransactionFromBuffer } from '../transaction';
 import { parseSignatureScript } from '../parseInput';

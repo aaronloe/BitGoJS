@@ -1,6 +1,6 @@
 // {signature} {pubKey}
 
-import { Stack } from '../../';
+import type { Stack } from '../../';
 import { script as bscript } from '../../';
 
 function isCompressedCanonicalPubKey(pubKey: Buffer): boolean {

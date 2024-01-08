@@ -1,13 +1,15 @@
-import { PsbtOpts, UtxoPsbt } from '../UtxoPsbt';
+import type { PsbtOpts } from '../UtxoPsbt';
+import { UtxoPsbt } from '../UtxoPsbt';
 import {
   getDefaultConsensusBranchIdForVersion,
   getDefaultVersionGroupIdForVersion,
   ZcashTransaction,
 } from './ZcashTransaction';
-import { Network, PsbtTransaction, Signer } from '../../';
+import type { Network, Signer } from '../../';
+import { PsbtTransaction } from '../../';
 import { Psbt as PsbtBase } from 'bip174';
 import * as types from 'bitcoinjs-lib/src/types';
-import { ValidateSigFunction } from 'bitcoinjs-lib/src/psbt';
+import type { ValidateSigFunction } from 'bitcoinjs-lib/src/psbt';
 import { ProprietaryKeySubtype, PSBT_PROPRIETARY_IDENTIFIER, withUnsafeNonSegwit } from '../PsbtUtil';
 const typeforce = require('typeforce');
 

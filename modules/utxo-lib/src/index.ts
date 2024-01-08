@@ -18,8 +18,8 @@ export * as p2trPayments from './payments';
 
 export {
   networks,
-  Network,
-  NetworkName,
+  type Network,
+  type NetworkName,
   getNetworkList,
   isValidNetwork,
   getNetworkName,
@@ -33,4 +33,4 @@ export {
 
 export { TransactionBuilder } from './transaction_builder';
 
-export { Network as BitcoinJSNetwork } from 'bitcoinjs-lib';
+export { type Network as BitcoinJSNetwork } from 'bitcoinjs-lib';

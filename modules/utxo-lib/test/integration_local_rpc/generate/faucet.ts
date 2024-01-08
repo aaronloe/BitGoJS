@@ -1,4 +1,5 @@
-import { RpcClient, RpcClientWithWallet, RpcError } from './RpcClient';
+import type { RpcClient, RpcClientWithWallet } from './RpcClient';
+import { RpcError } from './RpcClient';
 
 const walletName = 'utxolib-faucet';
 

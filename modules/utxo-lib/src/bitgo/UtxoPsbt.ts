@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import { Psbt as PsbtBase } from 'bip174';
-import {
+import type {
   Bip32Derivation,
   PsbtInput,
   TapBip32Derivation,
@@ -9,30 +9,21 @@ import {
 } from 'bip174/src/lib/interfaces';
 import { checkForInput } from 'bip174/src/lib/utils';
 import { BufferWriter, varuint } from 'bitcoinjs-lib/src/bufferutils';
-import { SessionKey } from '@brandonblack/musig';
-import { BIP32Factory, BIP32Interface } from 'bip32';
+import type { SessionKey } from '@brandonblack/musig';
+import type { BIP32Interface } from 'bip32';
+import { BIP32Factory } from 'bip32';
 import * as bs58check from 'bs58check';
 import { decodeProprietaryKey, encodeProprietaryKey } from 'bip174/src/lib/proprietaryKeyVal';
 
-import {
-  taproot,
-  HDSigner,
-  Signer,
-  Psbt,
-  PsbtTransaction,
-  Transaction,
-  TxOutput,
-  Network,
-  ecc as eccLib,
-  getMainnet,
-  networks,
-} from '..';
+import type { HDSigner, Signer, TxOutput, Network } from '..';
+import { taproot, Psbt, PsbtTransaction, Transaction, ecc as eccLib, getMainnet, networks } from '..';
 import { UtxoTransaction } from './UtxoTransaction';
 import { getOutputIdForInput } from './Unspent';
 import { isSegwit } from './psbt/scriptTypes';
 import { unsign } from './psbt/fromHalfSigned';
 import { toXOnlyPublicKey } from './outputScripts';
 import { parsePubScript2Of3 } from './parseInput';
+import type { PsbtMusig2Participants, PsbtMusig2PubNonce } from './Musig2';
 import {
   createMusig2SigningSession,
   encodePsbtMusig2PartialSig,
@@ -40,11 +31,9 @@ import {
   musig2PartialSign,
   parsePsbtMusig2Nonces,
   parsePsbtMusig2Participants,
-  PsbtMusig2Participants,
   assertPsbtMusig2Nonces,
   assertPsbtMusig2Participants,
   Musig2NonceStore,
-  PsbtMusig2PubNonce,
   parsePsbtMusig2PartialSigs,
   musig2PartialSigVerify,
   musig2AggregateSigs,
@@ -52,14 +41,14 @@ import {
   musig2DeterministicSign,
   createMusig2DeterministicNonce,
 } from './Musig2';
-import { isTriple, isTuple, Triple, Tuple } from './types';
+import type { Triple, Tuple } from './types';
+import { isTriple, isTuple } from './types';
 import { getTaprootOutputKey } from '../taproot';
+import type { ProprietaryKeySearch, ProprietaryKeyValue } from './PsbtUtil';
 import {
   getPsbtInputProprietaryKeyVals,
   getPsbtInputSignatureCount,
-  ProprietaryKeySearch,
   ProprietaryKeySubtype,
-  ProprietaryKeyValue,
   PSBT_PROPRIETARY_IDENTIFIER,
 } from './PsbtUtil';
 

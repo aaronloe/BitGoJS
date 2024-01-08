@@ -1,6 +1,8 @@
 /* eslint-disable no-redeclare */
-import { script, ScriptSignature, TxOutput } from 'bitcoinjs-lib';
-import { isPlaceholderSignature, parseSignatureScript, UtxoTransaction } from '../../src/bitgo';
+import type { TxOutput } from 'bitcoinjs-lib';
+import { script, ScriptSignature } from 'bitcoinjs-lib';
+import type { UtxoTransaction } from '../../src/bitgo';
+import { isPlaceholderSignature, parseSignatureScript } from '../../src/bitgo';
 
 const BN = require('bn.js');
 const EC = require('elliptic').ec;

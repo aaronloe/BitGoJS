@@ -1,3 +1,18 @@
+import type {
+  outputScripts,
+  ParsedSignatureScriptP2ms,
+  ParsedSignatureScriptTaproot,
+  ParsedSignatureScriptTaprootScriptPath,
+  RootWalletKeys,
+  Unspent,
+  UtxoPsbt,
+  UtxoTransaction,
+  UtxoTransactionBuilder,
+  WalletUnspent,
+  KeyName,
+  ParsedPsbtP2ms,
+  ParsedPsbtTaproot,
+} from '../../../src/bitgo';
 import {
   addToTransactionBuilder,
   getLeafVersion,
@@ -8,30 +23,17 @@ import {
   isPlaceholderSignature,
   isValidControlBock,
   isWalletUnspent,
-  outputScripts,
-  ParsedSignatureScriptP2ms,
-  ParsedSignatureScriptTaproot,
-  ParsedSignatureScriptTaprootScriptPath,
   parseSignatureScript2Of3,
-  RootWalletKeys,
   scriptTypeForChain,
   signInputWithUnspent,
   toTNumber,
-  Unspent,
   unspentSum,
-  UtxoPsbt,
-  UtxoTransaction,
-  UtxoTransactionBuilder,
-  WalletUnspent,
   WalletUnspentSigner,
-  KeyName,
-  ParsedPsbtP2ms,
-  ParsedPsbtTaproot,
 } from '../../../src/bitgo';
 import { parsePsbtInput, signWalletPsbt } from '../../../src/bitgo/wallet/Psbt';
 import * as assert from 'assert';
-import { SignatureTargetType } from './Psbt';
-import { Network } from '../../../src';
+import type { SignatureTargetType } from './Psbt';
+import type { Network } from '../../../src';
 
 function validateScript(
   psbtParsed: ParsedPsbtP2ms | ParsedPsbtTaproot,
@@ -145,6 +147,7 @@ export function validatePsbtParsing(
     } else {
       const psbtParsed = parsePsbtInput(psbt.data.inputs[i]);
       assert.strictEqual(psbtParsed.scriptType, scriptType === 'p2tr' ? 'taprootScriptPathSpend' : scriptType);
+      // @ts-expect-error this is supposed to not compile
       assert.ok(psbtParsed.scriptType !== 'p2shP2pk');
       const txParsed = parseSignatureScript2Of3(tx.ins[i]);
       validateScript(psbtParsed, txParsed);

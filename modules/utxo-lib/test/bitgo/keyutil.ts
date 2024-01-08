@@ -1,7 +1,7 @@
 const assert = require('assert');
 const crypto = require('crypto');
 
-import { ECPairInterface } from 'ecpair';
+import type { ECPairInterface } from 'ecpair';
 import { privateKeyBufferFromECPair, privateKeyBufferToECPair } from '../../src/bitgo/keyutil';
 import { ECPair } from '../../src/noble_ecc';
 

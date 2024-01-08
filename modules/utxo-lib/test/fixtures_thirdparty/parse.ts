@@ -1,18 +1,13 @@
 import * as assert from 'assert';
 import { describe } from 'mocha';
 import { getNetworkList, getNetworkName, isBitcoinGold, isMainnet, isZcash, isDogecoin } from '../../src/networks';
-import {
-  sigHashTestFile,
-  SigHashTestVector,
-  testFixtureArray,
-  txValidTestFile,
-  TxValidVector,
-  ZcashSigHashTestVector,
-} from './fixtures';
+import type { SigHashTestVector, TxValidVector, ZcashSigHashTestVector } from './fixtures';
+import { sigHashTestFile, testFixtureArray, txValidTestFile } from './fixtures';
 
 import { parseTransactionRoundTrip } from '../transaction_util';
 import { UtxoTransaction } from '../../src/bitgo/UtxoTransaction';
-import { ZcashNetwork, ZcashTransaction } from '../../src/bitgo/zcash/ZcashTransaction';
+import type { ZcashNetwork } from '../../src/bitgo/zcash/ZcashTransaction';
+import { ZcashTransaction } from '../../src/bitgo/zcash/ZcashTransaction';
 
 describe('Third-Party Fixtures', function () {
   getNetworkList()

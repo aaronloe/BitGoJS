@@ -1,6 +1,7 @@
-import { decodeProprietaryKey, ProprietaryKey } from 'bip174/src/lib/proprietaryKeyVal';
-import { PsbtInput } from 'bip174/src/lib/interfaces';
-import { Psbt } from 'bitcoinjs-lib/src/psbt';
+import type { ProprietaryKey } from 'bip174/src/lib/proprietaryKeyVal';
+import { decodeProprietaryKey } from 'bip174/src/lib/proprietaryKeyVal';
+import type { PsbtInput } from 'bip174/src/lib/interfaces';
+import type { Psbt } from 'bitcoinjs-lib/src/psbt';
 
 /**
  * bitgo proprietary key identifier

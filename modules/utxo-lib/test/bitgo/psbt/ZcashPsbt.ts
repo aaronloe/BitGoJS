@@ -2,7 +2,8 @@ import * as assert from 'assert';
 
 import { networks } from '../../../src';
 import * as utxolib from '../../../src';
-import { addWalletOutputToPsbt, getInternalChainCode, WalletUnspent, ZcashPsbt } from '../../../src/bitgo';
+import type { WalletUnspent } from '../../../src/bitgo';
+import { addWalletOutputToPsbt, getInternalChainCode, ZcashPsbt } from '../../../src/bitgo';
 import { getDefaultWalletKeys } from '../../../src/testutil';
 
 import { mockUnspents } from '../../../src/testutil/mock';

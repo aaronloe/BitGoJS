@@ -9,7 +9,7 @@
  *
  * This file defines the mapping between chain parameter and address type.
  */
-import { ScriptType2Of3 } from '../outputScripts';
+import type { ScriptType2Of3 } from '../outputScripts';
 
 /**
  * All valid chain codes

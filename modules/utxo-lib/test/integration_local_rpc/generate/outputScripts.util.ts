@@ -1,31 +1,34 @@
-import { BIP32Interface } from 'bip32';
-import { Transaction, TxOutput } from 'bitcoinjs-lib';
+import type { BIP32Interface } from 'bip32';
+import type { Transaction, TxOutput } from 'bitcoinjs-lib';
 import * as utxolib from '../../../src';
+import type { ScriptType2Of3 } from '../../../src/bitgo/outputScripts';
 import {
   createOutputScript2of3,
   isScriptType2Of3,
   isSupportedScriptType,
-  ScriptType2Of3,
   scriptTypes2Of3,
 } from '../../../src/bitgo/outputScripts';
-import { getDefaultCosigner, KeyTriple } from '../../../src/testutil';
+import type { KeyTriple } from '../../../src/testutil';
+import { getDefaultCosigner } from '../../../src/testutil';
 
+import type {
+  TxOutPoint,
+  UtxoTransaction,
+  ChainCode,
+  RootWalletKeys,
+  WalletUnspent,
+  KeyName,
+  Tuple,
+} from '../../../src/bitgo';
 import {
   isTriple,
   createTransactionBuilderForNetwork,
   createTransactionFromBuffer,
   signInput2Of3,
-  TxOutPoint,
-  UtxoTransaction,
   createPsbtForNetwork,
-  ChainCode,
-  RootWalletKeys,
   addWalletUnspentToPsbt,
   fromOutputWithPrevTx,
-  WalletUnspent,
-  KeyName,
   addWalletOutputToPsbt,
-  Tuple,
 } from '../../../src/bitgo';
 import { scriptTypeForChain } from '../../../src/bitgo';
 

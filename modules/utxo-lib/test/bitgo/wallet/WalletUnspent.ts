@@ -1,13 +1,13 @@
 import * as assert from 'assert';
 
-import { Transaction, networks } from '../../../src';
+import type { Transaction } from '../../../src';
+import { networks } from '../../../src';
+import type { TxOutPoint, Unspent, UtxoTransaction, KeyName } from '../../../src/bitgo';
 import {
   isWalletUnspent,
   formatOutputId,
   getOutputIdForInput,
   parseOutputId,
-  TxOutPoint,
-  Unspent,
   createTransactionBuilderForNetwork,
   getInternalChainCode,
   getExternalChainCode,
@@ -19,13 +19,11 @@ import {
   getWalletAddress,
   verifySignatureWithUnspent,
   toTNumber,
-  UtxoTransaction,
   createPsbtForNetwork,
   createPsbtFromTransaction,
   addWalletUnspentToPsbt,
   addWalletOutputToPsbt,
   toPrevOutput,
-  KeyName,
   signInputP2shP2pk,
 } from '../../../src/bitgo';
 

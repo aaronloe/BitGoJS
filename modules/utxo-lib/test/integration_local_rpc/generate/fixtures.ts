@@ -2,10 +2,11 @@ import * as assert from 'assert';
 import * as fs from 'fs-extra';
 import * as path from 'path';
 
-import { networks, Network, getNetworkName, getMainnet } from '../../../src';
+import type { Network } from '../../../src';
+import { networks, getNetworkName, getMainnet } from '../../../src';
 import { getKeyTriple } from '../../../src/testutil';
 import { RpcClient } from './RpcClient';
-import { RpcTransaction } from './RpcTypes';
+import type { RpcTransaction } from './RpcTypes';
 import { getDefaultTransactionVersion } from '../../../src/bitgo';
 
 export type Protocol = {

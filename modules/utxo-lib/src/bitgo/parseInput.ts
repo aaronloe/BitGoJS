@@ -1,6 +1,7 @@
 /* eslint no-redeclare: 0 */
 import * as opcodes from 'bitcoin-ops';
-import { TxInput, script as bscript } from 'bitcoinjs-lib';
+import type { TxInput } from 'bitcoinjs-lib';
+import { script as bscript } from 'bitcoinjs-lib';
 
 import { isTriple } from './types';
 import { isScriptType2Of3 } from './outputScripts';

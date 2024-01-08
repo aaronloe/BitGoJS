@@ -1,5 +1,6 @@
 import { networks } from '../networks';
-import { script as bscript, Payment, PaymentOpts, Stack, lazy } from 'bitcoinjs-lib';
+import type { Payment, PaymentOpts, Stack } from 'bitcoinjs-lib';
+import { script as bscript, lazy } from 'bitcoinjs-lib';
 
 const OPS = bscript.OPS;
 const typef = require('typeforce');

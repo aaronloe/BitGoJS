@@ -1,14 +1,17 @@
 import * as assert from 'assert';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 
-import { script as bscript, classify, TxOutput } from '../../src';
+import type { TxOutput } from '../../src';
+import { script as bscript, classify } from '../../src';
 import { getKeyName } from '../../src/testutil';
-import { getNetworkList, getNetworkName, isBitcoin, isMainnet, Network, networks } from '../../src/networks';
+import type { Network } from '../../src/networks';
+import { getNetworkList, getNetworkName, isBitcoin, isMainnet, networks } from '../../src/networks';
 
-import { ScriptType, ScriptType2Of3, scriptTypes2Of3 } from '../../src/bitgo/outputScripts';
+import type { ScriptType, ScriptType2Of3 } from '../../src/bitgo/outputScripts';
+import { scriptTypes2Of3 } from '../../src/bitgo/outputScripts';
+import type { UtxoTransaction } from '../../src/bitgo';
 import {
   verifySignature,
-  UtxoTransaction,
   parseSignatureScript,
   getSignatureVerifications,
   verifySignatureWithPublicKeys,

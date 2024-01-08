@@ -1,12 +1,8 @@
 import * as assert from 'assert';
 
-import {
-  createOutputScriptP2shP2pk,
-  ScriptType,
-  ScriptType2Of3,
-  scriptTypeP2shP2pk,
-  scriptTypes2Of3,
-} from '../bitgo/outputScripts';
+import type { ScriptType, ScriptType2Of3 } from '../bitgo/outputScripts';
+import { createOutputScriptP2shP2pk, scriptTypeP2shP2pk, scriptTypes2Of3 } from '../bitgo/outputScripts';
+import type { KeyName, RootWalletKeys, Unspent, UtxoPsbt, UtxoTransaction } from '../bitgo';
 import {
   addReplayProtectionUnspentToPsbt,
   addWalletOutputToPsbt,
@@ -16,17 +12,12 @@ import {
   getInternalChainCode,
   getSignatureVerifications,
   isWalletUnspent,
-  KeyName,
   parseSignatureScript2Of3,
-  RootWalletKeys,
   toOutput,
-  Unspent,
-  UtxoPsbt,
-  UtxoTransaction,
   verifySignatureWithUnspent,
   withUnsafeNonSegwit,
 } from '../bitgo';
-import { Network } from '../networks';
+import type { Network } from '../networks';
 import { mockReplayProtectionUnspent, mockWalletUnspent } from './mock';
 import { toOutputScript } from '../address';
 

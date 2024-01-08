@@ -1,6 +1,6 @@
 // OP_0 [signatures ...]
 
-import { Stack } from '../../';
+import type { Stack } from '../../';
 import { script as bscript } from '../../';
 import { opcodes } from '../../';
 

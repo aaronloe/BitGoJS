@@ -1,4 +1,4 @@
-import * as bitcoinjs from 'bitcoinjs-lib';
+import type * as bitcoinjs from 'bitcoinjs-lib';
 import * as assert from 'assert';
 import { beforeEach, describe, it } from 'mocha';
 import {

@@ -1,6 +1,6 @@
 import * as assert from 'assert';
+import type { ChainCode } from '../../../src/bitgo';
 import {
-  ChainCode,
   chainCodes,
   getExternalChainCode,
   getInternalChainCode,

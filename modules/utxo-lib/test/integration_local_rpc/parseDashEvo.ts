@@ -12,13 +12,13 @@ However the generated fixtures have the same format as the RPC responses so we w
 import * as fs from 'fs-extra';
 import * as assert from 'assert';
 
-import { RpcTransaction } from './generate/RpcTypes';
+import type { RpcTransaction } from './generate/RpcTypes';
 import { normalizeParsedTransaction, normalizeRpcTransaction } from './compare';
 
 import { parseTransactionRoundTrip } from '../transaction_util';
 
 import { networks, Transaction } from '../../src';
-import { DashTransaction } from '../../src/bitgo';
+import type { DashTransaction } from '../../src/bitgo';
 
 export async function readDashEvoTransactions(): Promise<RpcTransaction[]> {
   const rootDir = `test/integration_local_rpc/fixtures/dashTestExtra/`;

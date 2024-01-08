@@ -1,5 +1,6 @@
 import * as assert from 'assert';
 
+import type { Triple, UtxoTransaction } from '../../../src/bitgo';
 import {
   addXpubsToPsbt,
   getPsbtInputSignatureCount,
@@ -7,27 +8,22 @@ import {
   getStrictSignatureCount,
   getStrictSignatureCounts,
   RootWalletKeys,
-  Triple,
-  UtxoTransaction,
 } from '../../../src/bitgo';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
+import type { Input, InputScriptType, Output, TxnInput, TxnOutput } from '../../../src/testutil';
 import {
   constructPsbt,
   constructTxnBuilder,
   getDefaultWalletKeys,
-  Input,
-  InputScriptType,
   inputScriptTypes,
-  Output,
   outputScriptTypes,
-  TxnInput,
   txnInputScriptTypes,
-  TxnOutput,
   txnOutputScriptTypes,
 } from '../../../src/testutil';
-import { getNetworkList, getNetworkName, isMainnet, Network, networks } from '../../../src';
+import type { Network } from '../../../src';
+import { getNetworkList, getNetworkName, isMainnet, networks } from '../../../src';
 import { isSupportedScriptType } from '../../../src/bitgo/outputScripts';
-import { SignatureTargetType } from './Psbt';
+import type { SignatureTargetType } from './Psbt';
 
 const rootWalletKeys = getDefaultWalletKeys();
 const signs = ['unsigned', 'halfsigned', 'fullsigned'] as const;

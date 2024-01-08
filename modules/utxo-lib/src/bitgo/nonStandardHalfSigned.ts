@@ -1,6 +1,7 @@
 import * as assert from 'assert';
 import * as opcodes from 'bitcoin-ops';
-import { classify, script as bscript, TxInput } from '../';
+import type { TxInput } from '../';
+import { classify, script as bscript } from '../';
 
 /**
  * @param input - Input of non-standard half-signed transaction created with `tx.build()` instead of `tx.buildIncomplete()`.

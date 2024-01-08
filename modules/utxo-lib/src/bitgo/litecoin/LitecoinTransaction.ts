@@ -1,7 +1,8 @@
 import { BufferReader, BufferWriter } from 'bitcoinjs-lib/src/bufferutils';
 
 import { UtxoTransaction } from '../UtxoTransaction';
-import { isLitecoin, Network, networks } from '../../networks';
+import type { Network, networks } from '../../networks';
+import { isLitecoin } from '../../networks';
 
 export type LitecoinNetwork = typeof networks.litecoin | typeof networks.litecoinTest;
 

@@ -5,7 +5,7 @@ import { BufferReader, BufferWriter } from 'bitcoinjs-lib/src/bufferutils';
 const varuint = require('varuint-bitcoin');
 const typeforce = require('typeforce');
 
-import { networks } from '../../networks';
+import type { networks } from '../../networks';
 import { UtxoTransaction, varSliceSize } from '../UtxoTransaction';
 import { fromBufferV4, fromBufferV5, toBufferV4, toBufferV5, VALUE_INT64_ZERO } from './ZcashBufferutils';
 import { getBlake2bHash, getSignatureDigest, getTxidDigest } from './hashZip0244';

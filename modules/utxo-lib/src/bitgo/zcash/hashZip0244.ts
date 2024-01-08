@@ -2,12 +2,13 @@
  * Implements hashing methods described in https://zips.z.cash/zip-0244.
  * Only supports full transparent transactions without shielded inputs or outputs.
  */
-import { Transaction, TxInput, TxOutput } from 'bitcoinjs-lib';
+import type { TxInput, TxOutput } from 'bitcoinjs-lib';
+import { Transaction } from 'bitcoinjs-lib';
 import { BufferWriter } from 'bitcoinjs-lib/src/bufferutils';
 
 const blake2b = require('@bitgo/blake2b');
 
-import { ZcashTransaction } from './ZcashTransaction';
+import type { ZcashTransaction } from './ZcashTransaction';
 import { varSliceSize } from '../UtxoTransaction';
 
 type SignatureParams<TNumber extends number | bigint = number> = {

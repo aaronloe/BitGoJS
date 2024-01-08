@@ -6,7 +6,8 @@
 
 import * as assert from 'assert';
 import { ecc as eccLib } from '../../noble_ecc';
-import { isBitcoin, Network } from '../../networks';
+import type { Network } from '../../networks';
+import { isBitcoin } from '../../networks';
 import { isTriple } from '../types';
 import * as bitcoinjs from 'bitcoinjs-lib';
 

@@ -3,7 +3,8 @@ import * as util from 'util';
 import { spawn, execFile } from 'child_process';
 
 import * as utxolib from '../../../src';
-import { Network, getNetworkName } from '../../../src/networks';
+import type { Network } from '../../../src/networks';
+import { getNetworkName } from '../../../src/networks';
 
 type DockerImageParams = {
   extraArgsDocker: string[];

@@ -1,9 +1,11 @@
 import * as assert from 'assert';
-import axios, { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
+import axios from 'axios';
 import buildDebug from 'debug';
 
-import { Network, getMainnet, getNetworkName, isZcash } from '../../../src/networks';
-import { RpcTransaction } from './RpcTypes';
+import type { Network } from '../../../src/networks';
+import { getMainnet, getNetworkName, isZcash } from '../../../src/networks';
+import type { RpcTransaction } from './RpcTypes';
 
 const utxolib = require('../../../src');
 

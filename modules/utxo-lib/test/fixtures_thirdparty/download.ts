@@ -1,7 +1,8 @@
 import * as fs from 'fs-extra';
 import * as childProcess from 'child_process';
 
-import { Network, getNetworkList, getNetworkName, isMainnet } from '../../src';
+import type { Network } from '../../src';
+import { getNetworkList, getNetworkName, isMainnet } from '../../src';
 import { getArchiveUrl, getFixtureInfo, getArchiveRoot, sigHashTestFile, txValidTestFile } from './fixtures';
 
 function downloadAndUnpackTestFixtures(network: Network) {

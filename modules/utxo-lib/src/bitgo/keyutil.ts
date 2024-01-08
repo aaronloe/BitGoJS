@@ -1,5 +1,5 @@
-import { ECPairInterface } from 'ecpair';
-import { Network } from '../networks';
+import type { ECPairInterface } from 'ecpair';
+import type { Network } from '../networks';
 import { ECPair } from '../noble_ecc';
 
 /**

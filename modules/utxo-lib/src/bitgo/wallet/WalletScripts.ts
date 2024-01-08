@@ -1,7 +1,10 @@
-import { Network, address } from '../..';
-import { ChainCode, outputScripts } from '..';
-import { RootWalletKeys } from './WalletKeys';
-import { scriptTypeForChain, SpendableScript } from '../outputScripts';
+import type { Network } from '../..';
+import { address } from '../..';
+import type { ChainCode } from '..';
+import { outputScripts } from '..';
+import type { RootWalletKeys } from './WalletKeys';
+import type { SpendableScript } from '../outputScripts';
+import { scriptTypeForChain } from '../outputScripts';
 
 export function getWalletOutputScripts(keys: RootWalletKeys, chain: ChainCode, index: number): SpendableScript {
   return outputScripts.createOutputScript2of3(

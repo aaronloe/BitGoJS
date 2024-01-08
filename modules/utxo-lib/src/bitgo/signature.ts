@@ -1,20 +1,21 @@
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 
-import { Transaction, taproot, TxOutput, ScriptSignature } from 'bitcoinjs-lib';
+import type { TxOutput } from 'bitcoinjs-lib';
+import { Transaction, taproot, ScriptSignature } from 'bitcoinjs-lib';
 
 import { UtxoTransaction } from './UtxoTransaction';
-import { UtxoTransactionBuilder } from './UtxoTransactionBuilder';
+import type { UtxoTransactionBuilder } from './UtxoTransactionBuilder';
+import type { ScriptType, ScriptType2Of3 } from './outputScripts';
 import {
   createOutputScript2of3,
   createOutputScriptP2shP2pk,
   createSpendScriptP2tr,
   getOutputScript,
-  ScriptType,
-  ScriptType2Of3,
   scriptType2Of3AsPrevOutType,
 } from './outputScripts';
-import { Triple } from './types';
-import { getMainnet, Network, networks } from '../networks';
+import type { Triple } from './types';
+import type { Network } from '../networks';
+import { getMainnet, networks } from '../networks';
 import { ecc as eccLib } from '../noble_ecc';
 import { parseSignatureScript2Of3 } from './parseInput';
 import { getTaprootOutputKey } from '../taproot';

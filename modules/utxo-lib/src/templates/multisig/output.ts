@@ -1,6 +1,6 @@
 // m [pubKeys ...] n OP_CHECKMULTISIG
 
-import { Stack } from '../../';
+import type { Stack } from '../../';
 import { script as bscript } from '../../';
 import { opcodes } from '../../';
 import * as types from 'bitcoinjs-lib/src/types';

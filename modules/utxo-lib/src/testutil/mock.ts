@@ -1,24 +1,27 @@
 import * as assert from 'assert';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 import * as noble from '@noble/secp256k1';
 import * as utxolib from '..';
-import { getMainnet, Network, networks } from '../networks';
+import type { Network } from '../networks';
+import { getMainnet, networks } from '../networks';
 
-import {
+import type {
   ChainCode,
+  NonWitnessWalletUnspent,
+  RootWalletKeys,
+  Unspent,
+  UnspentWithPrevTx,
+  UtxoTransaction,
+  WalletUnspent,
+} from '../bitgo';
+import {
   createPsbtForNetwork,
   fromOutput,
   fromOutputWithPrevTx,
   getExternalChainCode,
   isSegwit,
-  NonWitnessWalletUnspent,
   outputScripts,
-  RootWalletKeys,
   scriptTypeForChain,
-  Unspent,
-  UnspentWithPrevTx,
-  UtxoTransaction,
-  WalletUnspent,
 } from '../bitgo';
 import { fromOutputScript } from '../address';
 import { createOutputScript2of3, createOutputScriptP2shP2pk } from '../bitgo/outputScripts';

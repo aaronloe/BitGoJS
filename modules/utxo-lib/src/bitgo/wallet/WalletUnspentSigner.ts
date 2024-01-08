@@ -1,7 +1,8 @@
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 
-import { DerivedWalletKeys, eqPublicKey, RootWalletKeys, WalletKeys } from './WalletKeys';
-import { Triple } from '../types';
+import type { WalletKeys } from './WalletKeys';
+import { DerivedWalletKeys, eqPublicKey, RootWalletKeys } from './WalletKeys';
+import type { Triple } from '../types';
 
 export class WalletUnspentSigner<T extends WalletKeys> {
   public readonly walletKeys: T;

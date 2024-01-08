@@ -1,5 +1,6 @@
 import * as assert from 'assert';
 
+import type { KeyName, Tuple, Unspent, UtxoPsbt, UtxoTransaction, WalletUnspent, ChainCode } from '../../../src/bitgo';
 import {
   addReplayProtectionUnspentToPsbt,
   addWalletOutputToPsbt,
@@ -8,7 +9,6 @@ import {
   getExternalChainCode,
   getInternalChainCode,
   isWalletUnspent,
-  KeyName,
   outputScripts,
   parsePsbtInput,
   parseSignatureScript2Of3,
@@ -16,24 +16,18 @@ import {
   PSBT_PROPRIETARY_IDENTIFIER,
   RootWalletKeys,
   scriptTypeForChain,
-  Tuple,
-  Unspent,
   unspentSum,
-  UtxoPsbt,
-  UtxoTransaction,
-  WalletUnspent,
-  ChainCode,
 } from '../../../src/bitgo';
+import type { ScriptType2Of3 } from '../../../src/bitgo/outputScripts';
 import {
   createKeyPathP2trMusig2,
   createOutputScriptP2shP2pk,
   createPaymentP2trMusig2,
-  ScriptType2Of3,
   toXOnlyPublicKey,
 } from '../../../src/bitgo/outputScripts';
 import { mockWalletUnspent, replayProtectionKeyPair } from '../../../src/testutil';
 import { bip32, networks } from '../../../src';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 import { isPsbtInputFinalized } from '../../../src/bitgo/PsbtUtil';
 
 export const network = networks.bitcoin;

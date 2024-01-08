@@ -1,4 +1,4 @@
-import { SessionKey } from '@brandonblack/musig';
+import type { SessionKey } from '@brandonblack/musig';
 
 import {
   checkPlainPublicKey,
@@ -8,16 +8,12 @@ import {
   toXOnlyPublicKey,
 } from './outputScripts';
 import { ecc, musig } from '../noble_ecc';
-import { Tuple } from './types';
+import type { Tuple } from './types';
 import { calculateTapTweak, tapTweakPubkey } from '../taproot';
 import { Transaction } from '../index';
-import { PsbtInput } from 'bip174/src/lib/interfaces';
-import {
-  getPsbtInputProprietaryKeyVals,
-  ProprietaryKeySubtype,
-  ProprietaryKeyValue,
-  PSBT_PROPRIETARY_IDENTIFIER,
-} from './PsbtUtil';
+import type { PsbtInput } from 'bip174/src/lib/interfaces';
+import type { ProprietaryKeyValue } from './PsbtUtil';
+import { getPsbtInputProprietaryKeyVals, ProprietaryKeySubtype, PSBT_PROPRIETARY_IDENTIFIER } from './PsbtUtil';
 
 /**
  *  Participant key value object.

@@ -1,4 +1,5 @@
 import * as assert from 'assert';
+import type { Network } from '../src/networks';
 import {
   getMainnet,
   getNetworkList,
@@ -16,7 +17,6 @@ import {
   isTestnet,
   isValidNetwork,
   isZcash,
-  Network,
   networks,
   supportsSegwit,
   supportsTaproot,

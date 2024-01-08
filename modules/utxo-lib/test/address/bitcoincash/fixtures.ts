@@ -1,6 +1,7 @@
-import { Network, networks } from '../../../src';
+import type { Network } from '../../../src';
+import { networks } from '../../../src';
 import { toOutputScript } from '../../../src/address';
-import { TestVector } from '../addressFormat';
+import type { TestVector } from '../addressFormat';
 
 export function getTestVectorsBitcoinCashAddressTranslations(
   network: Network,

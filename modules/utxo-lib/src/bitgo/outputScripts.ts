@@ -1,9 +1,11 @@
 import * as assert from 'assert';
 import * as bitcoinjs from 'bitcoinjs-lib';
 
-import { Network, p2trPayments, supportsSegwit, supportsTaproot, taproot } from '..';
+import type { Network } from '..';
+import { p2trPayments, supportsSegwit, supportsTaproot, taproot } from '..';
 
-import { isTriple, Triple, Tuple } from './types';
+import type { Triple, Tuple } from './types';
+import { isTriple } from './types';
 
 import { ecc as eccLib } from '../noble_ecc';
 import { getDepthFirstTaptree, getTweakedOutputKey } from '../taproot';

@@ -1,6 +1,7 @@
 import { DashTransaction } from './DashTransaction';
-import { PsbtOpts, UtxoPsbt } from '../UtxoPsbt';
-import { Network } from '../../networks';
+import type { PsbtOpts } from '../UtxoPsbt';
+import { UtxoPsbt } from '../UtxoPsbt';
+import type { Network } from '../../networks';
 import { Psbt as PsbtBase } from 'bip174';
 import { PsbtTransaction } from 'bitcoinjs-lib';
 

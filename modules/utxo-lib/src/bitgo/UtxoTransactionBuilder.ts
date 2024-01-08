@@ -1,8 +1,9 @@
-import { TxOutput, Transaction } from 'bitcoinjs-lib';
+import type { TxOutput, Transaction } from 'bitcoinjs-lib';
 // eslint-disable-next-line
 import * as bitcoinjs from 'bitcoinjs-lib';
-import { Network } from '..';
-import { Signer, TransactionBuilder } from '../transaction_builder';
+import type { Network } from '..';
+import type { Signer } from '../transaction_builder';
+import { TransactionBuilder } from '../transaction_builder';
 import { UtxoTransaction } from './UtxoTransaction';
 
 export interface TxbSignArg<TNumber extends number | bigint = number> {

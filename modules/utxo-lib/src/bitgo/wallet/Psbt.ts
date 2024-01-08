@@ -1,36 +1,42 @@
 import * as assert from 'assert';
 
-import { GlobalXpub, PartialSig, PsbtInput, TapScriptSig } from 'bip174/src/lib/interfaces';
+import type { GlobalXpub, PartialSig, PsbtInput, TapScriptSig } from 'bip174/src/lib/interfaces';
 import { checkForInput } from 'bip174/src/lib/utils';
-import { BIP32Interface } from 'bip32';
+import type { BIP32Interface } from 'bip32';
 import * as bs58check from 'bs58check';
 import { UtxoPsbt } from '../UtxoPsbt';
 import { UtxoTransaction } from '../UtxoTransaction';
 import { createOutputScript2of3, getLeafHash, scriptTypeForChain, toXOnlyPublicKey } from '../outputScripts';
-import { DerivedWalletKeys, RootWalletKeys } from './WalletKeys';
+import type { DerivedWalletKeys } from './WalletKeys';
+import { RootWalletKeys } from './WalletKeys';
 import { toPrevOutputWithPrevTx } from '../Unspent';
 import { createPsbtFromHex, createPsbtFromTransaction } from '../transaction';
-import { isWalletUnspent, WalletUnspent } from './Unspent';
+import type { WalletUnspent } from './Unspent';
+import { isWalletUnspent } from './Unspent';
 
+import type {
+  ParsedPubScriptP2ms,
+  ParsedPubScriptTaprootScriptPath,
+  ParsedPubScriptTaproot,
+  ParsedPubScriptTaprootKeyPath,
+  ParsedPubScriptP2shP2pk,
+  ParsedScriptType,
+} from '../parseInput';
 import {
   getLeafVersion,
   calculateScriptPathLevel,
   isValidControlBock,
-  ParsedPubScriptP2ms,
-  ParsedPubScriptTaprootScriptPath,
   parsePubScript2Of3,
-  ParsedPubScriptTaproot,
-  ParsedPubScriptTaprootKeyPath,
   parsePubScript,
-  ParsedPubScriptP2shP2pk,
-  ParsedScriptType,
   isPlaceholderSignature,
   parseSignatureScript,
 } from '../parseInput';
 import { parsePsbtMusig2PartialSigs } from '../Musig2';
-import { isTuple, Triple } from '../types';
+import type { Triple } from '../types';
+import { isTuple } from '../types';
 import { createTaprootOutputScript } from '../../taproot';
-import { opcodes as ops, script as bscript, TxInput } from 'bitcoinjs-lib';
+import type { TxInput } from 'bitcoinjs-lib';
+import { opcodes as ops, script as bscript } from 'bitcoinjs-lib';
 import { opcodes, payments } from '../../index';
 import { getPsbtInputSignatureCount, isPsbtInputFinalized } from '../PsbtUtil';
 
@@ -325,6 +331,8 @@ function parseScript(
   return parsePubScript(pubScript, scriptType);
 }
 
+type ParsePsbtInputResponse = ParsedPsbtP2ms | ParsedPsbtTaproot | ParsedPsbtP2shP2pk;
+
 /**
  * @return psbt metadata are parsed as per below conditions.
  * redeemScript/witnessScript/tapLeafScript matches BitGo.
@@ -338,7 +346,7 @@ function parseScript(
  * P2TR MUSIG2 kep path => scriptType (taprootKeyPathSpend), pubScript (scriptPubKey), participant pub keys (signer),
  * public key (tapOutputkey), signatures (partial signer sigs).
  */
-export function parsePsbtInput(input: PsbtInput): ParsedPsbtP2ms | ParsedPsbtTaproot | ParsedPsbtP2shP2pk {
+export function parsePsbtInput(input: PsbtInput): ParsePsbtInputResponse {
   if (isPsbtInputFinalized(input)) {
     throw new Error('Finalized PSBT parsing is not supported');
   }
@@ -368,7 +376,7 @@ export function parsePsbtInput(input: PsbtInput): ParsedPsbtP2ms | ParsedPsbtTap
       controlBlock,
       scriptPathLevel,
       leafVersion,
-    };
+    } as unknown as ParsePsbtInputResponse;
   }
   if (
     parsedPubScript.scriptType === 'p2sh' ||

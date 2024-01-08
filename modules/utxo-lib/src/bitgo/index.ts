@@ -1,4 +1,4 @@
-export { PsbtInput, PsbtOutput } from 'bip174/src/lib/interfaces';
+export type { PsbtInput, PsbtOutput } from 'bip174/src/lib/interfaces';
 
 export * as bcashAddress from './bitcoincash';
 export * as keyutil from './keyutil';
@@ -22,7 +22,7 @@ export * from './tnumber';
 export * from './litecoin';
 export * from './PsbtUtil';
 
-import { PsbtInput } from 'bip174/src/lib/interfaces';
+import type { PsbtInput } from 'bip174/src/lib/interfaces';
 /**
  * alias for PsbtInput type to avoid direct bip174 library dependency by users of the util functions
  * @deprecated use PsbtInput instead
